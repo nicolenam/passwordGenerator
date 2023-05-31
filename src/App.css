@@ -100,31 +100,34 @@ h1{
 	color: #a4ffaf;
 }
 
-.slider {
-	-webkit-appearance: none;
+input[type='range'] {
+	overflow: hidden;
 	width: 100%;
-	height: 7px;
-	background: #0e0d13;
-	border-radius: 10px;
-  }
-  
-  .slider::-webkit-slider-thumb {
 	-webkit-appearance: none;
-	appearance: none;
-	width: 5px;
-	height: 5px;
-	background: #04AA6D;
-	cursor: pointer;
+	background-color:  #0e0d13;
+	height: 7px;
   }
-  
-  .slider::-moz-range-thumb {
-	width: 20px;
-	height: 20px;
-	background: #f0eff7;
+
+
+input[type="range"]::-moz-range-progress {
+	background-color: #a4ffaf; 
+	height: 7px;
+  }
+
+input[type="range"]::-moz-range-track {  
+	background-color: #0e0d13;
+	height: 7px;
+}
+
+input[type="range"]::-moz-range-thumb {
 	border: none;
 	cursor: pointer;
-	border-radius: 50%;
-  }
+}
+
+  
+
+  
+
 
 /* color references  */
 /* container #24232b */
