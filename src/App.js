@@ -1,11 +1,13 @@
 import './App.css';
+import Display from './Components/Display';
 
 function App() {
   return (
     <div className="App">
       <header>
-        this is test
+        <h1>Password Generator</h1>
       </header>
+      <Display />
     </div>
   );
 }

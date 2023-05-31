@@ -57,7 +57,22 @@ body{
   font-family: 'JetBrains Mono', monospace;
   color: #f0eff7;
   background-color: #0e0d13;
+  font-size: 20px;
+  max-width: 1440px;
+  margin: 300px auto;
 }
+
+h1{
+
+	text-align: center;
+}
+
+.wrapper{
+	max-width: 500px;
+	min-width: 300px;
+	margin: 0 auto;
+}
+
 
 /* color references  */
 /* container #24232b */
