@@ -1,5 +1,6 @@
 import './App.css';
 import Display from './Components/Display';
+import Form from './Components/Form';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <h1>Password Generator</h1>
       </header>
       <Display />
+      <Form />
     </div>
   );
 }
