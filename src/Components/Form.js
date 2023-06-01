@@ -1,42 +1,28 @@
+import { useState } from 'react';
+import OptionsList from "./OptionsList";
+import Evaluation from "./Evaluation";
 
 const Form = () =>{
+    
+    const [length, setLength] = useState(10);
+
+    const handleChange = (e) =>{
+        setLength(e.target.value)
+    }
 
     return(
         <form className="wrapper">
             <div className="sliderContainer">
                 <h2>character length</h2>
-                <p>10</p>
+                <p>{length}</p>
             </div>
             <label className="sr-only">slider</label>
-            <input className="slider" type="range" min="1" max="20" />
+            <input className="slider" type="range" value={length} min="1" max="20" onChange={handleChange}/>
             <div className="optionsContainer">
-                <div>
-                    <label  className="optionsItem">Include Uppercase Letters
-                        <input type="checkbox"/>
-                        <span className="checkmark"></span>
-                    </label>
-                </div>
-                <div>
-                    <label  className="optionsItem">Include Lowercase Letters
-                        <input type="checkbox"/>
-                        <span className="checkmark"></span>
-                    </label>
-                </div>
-                <div>
-                    <label  className="optionsItem">Include Numbers
-                        <input type="checkbox"/>
-                        <span className="checkmark"></span>
-                    </label>
-                </div>
-                <div>
-                    <label  className="optionsItem">Include Symbols
-                        <input type="checkbox"/>
-                        <span className="checkmark"></span>
-                    </label>
-                </div>
+                <OptionsList />
             </div>
             <div>
-                Evaluation component
+                <Evaluation />
             </div>
             <button>Generate</button>
         </form>
