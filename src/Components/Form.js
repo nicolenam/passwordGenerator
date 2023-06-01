@@ -7,7 +7,7 @@ const Form = () =>{
                 <h2>character length</h2>
                 <p>10</p>
             </div>
-            <input className="slider" type="range" name="" min="1" max="20" />
+            <input className="slider" type="range" min="1" max="20" />
             <div>
                 checkboxes for options
             </div>

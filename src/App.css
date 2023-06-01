@@ -105,14 +105,14 @@ input[type='range'] {
 	width: 100%;
 	-webkit-appearance: none;
 	background-color:  #0e0d13;
-	height: 7px;
-  }
-
+	height: 17px;
+	border-radius: 10px;
+}
 
 input[type="range"]::-moz-range-progress {
 	background-color: #a4ffaf; 
-	height: 7px;
-  }
+	height: 17px;
+}
 
 input[type="range"]::-moz-range-track {  
 	background-color: #0e0d13;
@@ -122,11 +122,13 @@ input[type="range"]::-moz-range-track {
 input[type="range"]::-moz-range-thumb {
 	border: none;
 	cursor: pointer;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
 }
 
-  
 
-  
+
 
 
 /* color references  */
