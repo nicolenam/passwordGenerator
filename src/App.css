@@ -100,36 +100,94 @@ h1{
 	color: #a4ffaf;
 }
 
-input[type='range'] {
-	overflow: hidden;
-	width: 100%;
+.slider{
+	margin-bottom: 20px;
+}
+
+.slider[type='range'] {
 	-webkit-appearance: none;
+	width: 100%;
 	background: transparent;
+	height: 20px;
 	border-radius: 10px;
 }
 
-input[type="range"]::-moz-range-progress {
+.slider[type="range"]::-moz-range-progress {
 	background-color: #a4ffaf; 
-	height: 10px;
+	height: 7px;
+	border-radius: 10px;
 }
 
-input[type="range"]::-moz-range-track {  
+.slider[type="range"]::-moz-range-track {  
 	background-color: #0e0d13;
-	height: 10px;
+	height: 7px;
+	border-radius: 10px;
 }
 
-input[type="range"]::-moz-range-thumb {
+.slider[type="range"]::-moz-range-thumb {
 	border: none;
 	cursor: pointer;
-	width: 15px;
-	height: 15px;
+	width: 20px;
+	height: 20px;
 	border-radius: 50%;
 }
 
+.optionsItem{
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: row-reverse;
+	position: relative;
+	padding: 0 50px 20px;
+	font-size: 1rem;
+}
 
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox */
 
+.optionsItem input{
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
 
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 15px;
+	width: 15px;
+	border: 2px solid #f0eff7;
+	cursor: pointer;
+}
 
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+.optionsItem input:checked ~ .checkmark {
+	background-color: #a4ffaf;
+	border: none;
+	width: 17px;
+	height: 17px;
+}
+
+.optionsItem input:checked ~ .checkmark:after {
+	display: block;
+}
+  
+.optionsItem .checkmark:after {
+	left: 5px;
+	width: 3px;
+	height: 10px;
+	border: solid #0e0d13;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
 
 /* color references  */
 /* container #24232b */
