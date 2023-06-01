@@ -104,28 +104,28 @@ input[type='range'] {
 	overflow: hidden;
 	width: 100%;
 	-webkit-appearance: none;
-	background-color:  #0e0d13;
-	height: 17px;
+	background: transparent;
 	border-radius: 10px;
 }
 
 input[type="range"]::-moz-range-progress {
 	background-color: #a4ffaf; 
-	height: 17px;
+	height: 10px;
 }
 
 input[type="range"]::-moz-range-track {  
 	background-color: #0e0d13;
-	height: 7px;
+	height: 10px;
 }
 
 input[type="range"]::-moz-range-thumb {
 	border: none;
 	cursor: pointer;
-	width: 13px;
-	height: 13px;
+	width: 15px;
+	height: 15px;
 	border-radius: 50%;
 }
+
 
 
 
