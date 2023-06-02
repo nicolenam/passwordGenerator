@@ -2,19 +2,33 @@ import { useState } from 'react';
 import OptionsList from "./OptionsList";
 import Evaluation from "./Evaluation";
 
-const Form = () =>{
-    
-    const [length, setLength] = useState(10);
-    const [optionsArr, setOptionsArr] = useState([])
+const Form = ({setPassword}) =>{
+
+    const [ length, setLength ] = useState(10);
+    const [ optionsArr, setOptionsArr ] = useState([]);
 
     const handleChange = (e) =>{
         setLength(e.target.value)
     }
 
-    const handleSubmit = (e) =>{
+    const generatePassword = (e) =>{
         e.preventDefault();
-        console.log("final length:", length);
-        console.log("user chosen options:", optionsArr);
+        
+        const characters = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let password = "";
+
+        for (let i = 0 ; i <= length-1 ; i++) {
+
+            const randomCharacters = Math.floor(Math.random() * characters.length);
+
+            password += characters.substring(randomCharacters, randomCharacters +1);
+
+            console.log(password)
+
+        }
+
+
+        
     }
 
     const userInput = (e) =>{
@@ -29,7 +43,7 @@ const Form = () =>{
     } 
 
     return(
-        <form className="wrapper" onSubmit={handleSubmit}>
+        <form className="wrapper" onSubmit={generatePassword}>
             <div className="sliderContainer">
                 <h2>character length</h2>
                 <p>{length}</p>
