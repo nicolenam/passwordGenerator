@@ -23,7 +23,7 @@ const Form = ({setPassword}) =>{
 
         // "Uppercase Letters", "Numbers", "Lowercase Letters", "Symbols"
         
-        if(optionsArr.length == 1){
+        if(optionsArr.length === 1){
             
             if(optionsArr[0] === "Uppercase Letters"){
                 
@@ -60,11 +60,13 @@ const Form = ({setPassword}) =>{
 
             }
 
+        }else if (optionsArr.length === 2){
+            console.log("user chose 2", optionsArr)
+        }else if (optionsArr.length === 3){
+            console.log("user chose 3", optionsArr)
+        }else {
+            console.log(optionsArr.length)
         }
-   
-
-
-        
     }
 
     const userInput = (e) =>{
@@ -92,7 +94,7 @@ const Form = ({setPassword}) =>{
             <div>
                 <Evaluation />
             </div>
-            <button>Generate</button>
+            <button className="submitBtn">Generate</button>
         </form>
     )
 }

@@ -87,6 +87,11 @@ h1{
 	cursor: pointer;
 }
 
+.copyBtn{
+	background: transparent;
+	border: none;
+}
+
 /* form styles */
 
 .sliderContainer{
@@ -188,7 +193,7 @@ h1{
 	transform: rotate(45deg);
 }
 
-button{
+.submitBtn{
 	text-transform: uppercase;
 	width: 100%;
 	padding: 10px;
