@@ -21,51 +21,35 @@ const Form = ({setPassword}) =>{
         const numbers = "0123456789";
         const symbols = "!@#$%^&*()";
 
-        // "Uppercase Letters", "Numbers", "Lowercase Letters", "Symbols"
+        // "Uppercase Letters", "Lowercase Letters",  "Numbers", "Symbols"
+
+        // cases for 3 user options
+        const caseOne = [ "Lowercase Letters",  "Numbers", "Uppercase Letters" ];
+        const caseTwo = [ "Lowercase Letters",  "Symbols", "Uppercase Letters" ];
+        const caseThree = [ "Lowercase Letters",  "Numbers", "Symbols" ];
+        const caseFour = [ "Numbers", "Symbols", "Uppercase Letters" ];
         
-        if(optionsArr.length === 1){
-            
-            if(optionsArr[0] === "Uppercase Letters"){
-                
-                for(let i = 0; i <= length -1 ; i++){
-                    const randomChar = Math.floor(Math.random() * upperCase.length)
-                    console.log(randomChar);
-                    password += upperCase.substring(randomChar, randomChar + 1);
-                    console.log(password);
-                }
-            }else if (optionsArr[0] === "Lowercase Letters"){
+        if(optionsArr.length >= 3){
 
-                for(let i = 0; i <= length -1 ; i++){
-                    const randomChar = Math.floor(Math.random() * lowerCase.length)
-                    console.log(randomChar);
-                    password += lowerCase.substring(randomChar, randomChar + 1);
-                    console.log(password);
-                }
-            }else if (optionsArr[0] === "Numbers"){
+            const sortedOptionsArr = optionsArr.slice().sort();
 
-                for(let i = 0; i <= length -1 ; i++){
-                    const randomChar = Math.floor(Math.random() * numbers.length)
-                    console.log(randomChar);
-                    password += numbers.substring(randomChar, randomChar + 1);
-                    console.log(password);
+            if(optionsArr.length === 3){
+                if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseOne)){
+                    console.log("case one");
+                }else if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseTwo)){
+                    console.log("case two");
+                }else if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseThree)){
+                    console.log("case three")
+                }else if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseFour)){
+                    console.log("case four")
                 }
+
             }else{
-
-                for(let i = 0; i <= length -1 ; i++){
-                    const randomChar = Math.floor(Math.random() * symbols.length)
-                    console.log(randomChar);
-                    password += symbols.substring(randomChar, randomChar + 1);
-                    console.log(password);
-                }
-
+                console.log("4 useroptions block", optionsArr);
             }
 
-        }else if (optionsArr.length === 2){
-            console.log("user chose 2", optionsArr)
-        }else if (optionsArr.length === 3){
-            console.log("user chose 3", optionsArr)
-        }else {
-            console.log(optionsArr.length)
+        }else{
+            alert("Please choose 3 options or more");
         }
     }
 
