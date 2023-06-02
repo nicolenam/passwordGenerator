@@ -12,20 +12,56 @@ const Form = ({setPassword}) =>{
     }
 
     const generatePassword = (e) =>{
+
         e.preventDefault();
-        
-        const characters = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         let password = "";
+        
+        const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+        const numbers = "0123456789";
+        const symbols = "!@#$%^&*()";
 
-        for (let i = 0 ; i <= length-1 ; i++) {
+        // "Uppercase Letters", "Numbers", "Lowercase Letters", "Symbols"
+        
+        if(optionsArr.length == 1){
+            
+            if(optionsArr[0] === "Uppercase Letters"){
+                
+                for(let i = 0; i <= length -1 ; i++){
+                    const randomChar = Math.floor(Math.random() * upperCase.length)
+                    console.log(randomChar);
+                    password += upperCase.substring(randomChar, randomChar + 1);
+                    console.log(password);
+                }
+            }else if (optionsArr[0] === "Lowercase Letters"){
 
-            const randomCharacters = Math.floor(Math.random() * characters.length);
+                for(let i = 0; i <= length -1 ; i++){
+                    const randomChar = Math.floor(Math.random() * lowerCase.length)
+                    console.log(randomChar);
+                    password += lowerCase.substring(randomChar, randomChar + 1);
+                    console.log(password);
+                }
+            }else if (optionsArr[0] === "Numbers"){
 
-            password += characters.substring(randomCharacters, randomCharacters +1);
+                for(let i = 0; i <= length -1 ; i++){
+                    const randomChar = Math.floor(Math.random() * numbers.length)
+                    console.log(randomChar);
+                    password += numbers.substring(randomChar, randomChar + 1);
+                    console.log(password);
+                }
+            }else{
 
-            console.log(password)
+                for(let i = 0; i <= length -1 ; i++){
+                    const randomChar = Math.floor(Math.random() * symbols.length)
+                    console.log(randomChar);
+                    password += symbols.substring(randomChar, randomChar + 1);
+                    console.log(password);
+                }
+
+            }
 
         }
+   
 
 
         
