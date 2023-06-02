@@ -189,9 +189,12 @@ h1{
 	transform: rotate(45deg);
 }
 
-/* color references  */
-/* container #24232b */
-/* button #a4ffaf */
-/* sliding bar #a4ffaf */
-/* strength #605e6b */
-/* strength bar #f8cc65 */
+button{
+	text-transform: uppercase;
+	width: 100%;
+	padding: 10px;
+	color: #24232b;
+	font-weight: 500;
+	border: none;
+	background: #a4ffaf;
+}
