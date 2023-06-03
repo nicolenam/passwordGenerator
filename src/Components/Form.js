@@ -11,7 +11,6 @@ const Form = ({setPassword}) =>{
         setLength(e.target.value)
     }
 
-    // cases for 3 user options
     const caseOne = [ "Lowercase Letters",  "Numbers", "Uppercase Letters" ];
     const caseTwo = [ "Lowercase Letters",  "Symbols", "Uppercase Letters" ];
     const caseThree = [ "Lowercase Letters",  "Numbers", "Symbols" ];
@@ -25,8 +24,8 @@ const Form = ({setPassword}) =>{
     const generatePassword = (e) =>{
 
         e.preventDefault();
-        let password = "";
         
+        let password = "";
         
         if(optionsArr.length >= 3){
 
@@ -46,18 +45,63 @@ const Form = ({setPassword}) =>{
                         const randomIndex = Math.floor(Math.random() * characters.length)
                         password += characters[randomIndex];
                     }
-                    setPassword(password)
+                    setPassword(password);
 
                 }else if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseTwo)){
-                    console.log("case two");
+                    
+                    password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+                    password += upperCase[Math.floor(Math.random() * upperCase.length)];
+                    password += symbols[Math.floor(Math.random() * symbols.length)];
+
+                    const characters = lowerCase + symbols + upperCase;
+
+                    for(let i = 0; i < length-3; i++){
+                        const randomIndex = Math.floor(Math.random() * characters.length)
+                        password += characters[randomIndex];
+                    }
+                    setPassword(password);
+
                 }else if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseThree)){
-                    console.log("case three")
+                    
+                    password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+                    password += numbers[Math.floor(Math.random() * numbers.length)];
+                    password += symbols[Math.floor(Math.random() * symbols.length)];
+
+                    const characters = lowerCase + symbols + numbers;
+
+                    for(let i = 0; i < length-3; i++){
+                        const randomIndex = Math.floor(Math.random() * characters.length)
+                        password += characters[randomIndex];
+                    }
+                    setPassword(password);
                 }else if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseFour)){
-                    console.log("case four")
+                    
+                    password += upperCase[Math.floor(Math.random() * upperCase.length)];
+                    password += numbers[Math.floor(Math.random() * numbers.length)];
+                    password += symbols[Math.floor(Math.random() * symbols.length)];
+
+                    const characters = upperCase + symbols + numbers;
+
+                    for(let i = 0; i < length-3; i++){
+                        const randomIndex = Math.floor(Math.random() * characters.length)
+                        password += characters[randomIndex];
+                    }
+                    setPassword(password);
                 }
 
             }else{
-                console.log("4 useroptions block", optionsArr);
+                password += upperCase[Math.floor(Math.random() * upperCase.length)];
+                password += numbers[Math.floor(Math.random() * numbers.length)];
+                password += symbols[Math.floor(Math.random() * symbols.length)];
+                password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+
+                const characters = upperCase + symbols + numbers + lowerCase;
+
+                for(let i = 0; i < length-4; i++){
+                    const randomIndex = Math.floor(Math.random() * characters.length)
+                    password += characters[randomIndex];
+                }
+                setPassword(password);
             }
 
         }else{
