@@ -4,38 +4,50 @@ import Evaluation from "./Evaluation";
 
 const Form = ({setPassword}) =>{
 
-    const [ length, setLength ] = useState(10);
+    const [ length, setLength ] = useState(15);
     const [ optionsArr, setOptionsArr ] = useState([]);
 
     const handleChange = (e) =>{
         setLength(e.target.value)
     }
 
+    // cases for 3 user options
+    const caseOne = [ "Lowercase Letters",  "Numbers", "Uppercase Letters" ];
+    const caseTwo = [ "Lowercase Letters",  "Symbols", "Uppercase Letters" ];
+    const caseThree = [ "Lowercase Letters",  "Numbers", "Symbols" ];
+    const caseFour = [ "Numbers", "Symbols", "Uppercase Letters" ];
+
+    const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    const numbers = "0123456789";
+    const symbols = "!@#$%^&*()";
+
     const generatePassword = (e) =>{
 
         e.preventDefault();
         let password = "";
         
-        const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        const lowerCase = "abcdefghijklmnopqrstuvwxyz";
-        const numbers = "0123456789";
-        const symbols = "!@#$%^&*()";
-
-        // "Uppercase Letters", "Lowercase Letters",  "Numbers", "Symbols"
-
-        // cases for 3 user options
-        const caseOne = [ "Lowercase Letters",  "Numbers", "Uppercase Letters" ];
-        const caseTwo = [ "Lowercase Letters",  "Symbols", "Uppercase Letters" ];
-        const caseThree = [ "Lowercase Letters",  "Numbers", "Symbols" ];
-        const caseFour = [ "Numbers", "Symbols", "Uppercase Letters" ];
         
         if(optionsArr.length >= 3){
 
             const sortedOptionsArr = optionsArr.slice().sort();
 
             if(optionsArr.length === 3){
+
                 if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseOne)){
-                    console.log("case one");
+
+                    password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+                    password += upperCase[Math.floor(Math.random() * upperCase.length)];
+                    password += numbers[Math.floor(Math.random() * numbers.length)];
+
+                    const characters = lowerCase + numbers + upperCase;
+
+                    for(let i = 0; i < length-3; i++){
+                        const randomIndex = Math.floor(Math.random() * characters.length)
+                        password += characters[randomIndex];
+                    }
+                    setPassword(password)
+
                 }else if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseTwo)){
                     console.log("case two");
                 }else if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseThree)){
@@ -71,7 +83,7 @@ const Form = ({setPassword}) =>{
                 <p>{length}</p>
             </div>
             <label className="sr-only">slider</label>
-            <input className="slider" type="range" value={length} min="1" max="20" onChange={handleChange}/>
+            <input className="slider" type="range" value={length} min="10" max="20" onChange={handleChange}/>
             <div className="optionsContainer">
                 <OptionsList userInput={userInput}/>
             </div>

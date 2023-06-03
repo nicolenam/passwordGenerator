@@ -5,7 +5,7 @@ import Form from './Components/Form';
 
 function App() {
 
-  const [ password, setPassword ] = useState("asdfasdfasd");
+  const [ password, setPassword ] = useState("");
 
   return (
     <div className="App">
