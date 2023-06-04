@@ -8,7 +8,7 @@ const Form = ({setPassword}) =>{
     const [ optionsArr, setOptionsArr ] = useState([]);
 
     const handleChange = (e) =>{
-        setLength(e.target.value)
+        setLength(e.target.value);
     }
 
     const caseOne = [ "Lowercase Letters",  "Numbers", "Uppercase Letters" ];
@@ -24,7 +24,7 @@ const Form = ({setPassword}) =>{
     const generatePassword = (e) =>{
 
         e.preventDefault();
-        
+
         let password = "";
         
         if(optionsArr.length >= 3){
