@@ -8,10 +8,9 @@ const Form = ({setPassword}) =>{
     const [ optionsArr, setOptionsArr ] = useState([]);
     const [ strength, setStrength ] = useState("");
     const strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{15,})');
-    const mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))');
+    const mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{10,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{12,}))');
 
     const checkStrength = (password) =>{
-        console.log(password);
         if(strongPassword.test(password)){
             setStrength("Strong");
         }
