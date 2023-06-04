@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import OptionsList from "./OptionsList";
 import Evaluation from "./Evaluation";
 
@@ -6,6 +6,21 @@ const Form = ({setPassword}) =>{
 
     const [ length, setLength ] = useState(15);
     const [ optionsArr, setOptionsArr ] = useState([]);
+    const [ strength, setStrength ] = useState("");
+    const strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{15,})');
+    const mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))');
+
+    const checkStrength = (password) =>{
+        console.log(password);
+        if(strongPassword.test(password)){
+            setStrength("Strong");
+        }
+        else if(mediumPassword.test(password)){
+            setStrength("Medium");
+        }else{
+            setStrength("Weak");
+        }
+    }
 
     const handleChange = (e) =>{
         setLength(e.target.value);
@@ -46,7 +61,7 @@ const Form = ({setPassword}) =>{
                         password += characters[randomIndex];
                     }
                     setPassword(password);
-
+                    checkStrength(password);
                 }else if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseTwo)){
                     
                     password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
@@ -60,7 +75,7 @@ const Form = ({setPassword}) =>{
                         password += characters[randomIndex];
                     }
                     setPassword(password);
-
+                    checkStrength(password);
                 }else if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseThree)){
                     
                     password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
@@ -74,6 +89,7 @@ const Form = ({setPassword}) =>{
                         password += characters[randomIndex];
                     }
                     setPassword(password);
+                    checkStrength(password);
                 }else if(JSON.stringify(sortedOptionsArr) === JSON.stringify(caseFour)){
                     
                     password += upperCase[Math.floor(Math.random() * upperCase.length)];
@@ -87,6 +103,7 @@ const Form = ({setPassword}) =>{
                         password += characters[randomIndex];
                     }
                     setPassword(password);
+                    checkStrength(password);
                 }
 
             }else{
@@ -102,6 +119,7 @@ const Form = ({setPassword}) =>{
                     password += characters[randomIndex];
                 }
                 setPassword(password);
+                checkStrength(password);
             }
 
         }else{
@@ -132,7 +150,7 @@ const Form = ({setPassword}) =>{
                 <OptionsList userInput={userInput}/>
             </div>
             <div>
-                <Evaluation />
+                <Evaluation strength={strength}/>
             </div>
             <button className="submitBtn">Generate</button>
         </form>

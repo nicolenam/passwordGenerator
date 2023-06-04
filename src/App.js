@@ -1,7 +1,7 @@
 import './App.css';
-import { useState } from 'react';
-import Display from './Components/Display';
-import Form from './Components/Form';
+import { useState } from "react";
+import Display from "./Components/Display";
+import Form from "./Components/Form";
 
 function App() {
 

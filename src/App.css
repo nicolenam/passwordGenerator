@@ -68,7 +68,7 @@ h1{
 }
 
 .wrapper{
-	max-width: 800px;
+	max-width: 50%;
 	min-width: 300px;
 	margin: 0 auto;
 	background-color: #24232b;
@@ -260,7 +260,10 @@ h1{
 .bar{
 	width: 5px;
 	height: 20px;
-	border: 1px solid #f0eff7;
+	border: 1.5px solid #f0eff7;
 }
 
-/* background-color: #fccb60; */
+.fill{
+	background-color: #fccb60;
+	border: 1.5px solid #fccb60;
+}
