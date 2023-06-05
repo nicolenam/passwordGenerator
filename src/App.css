@@ -90,7 +90,19 @@ h1{
 .copyBtn{
 	background: transparent;
 	border: none;
+	position: relative;
 }
+
+.copy{
+	display: block;
+	color: #f0eff7;
+}
+
+.transparent{
+	display: block;
+	color: transparent;
+}
+
 
 /* form styles */
 
@@ -222,6 +234,7 @@ h1{
 	font-weight: 500;
 	border: none;
 	background: #a4ffaf;
+	cursor: pointer;
 }
 
 /* evaluation styles */
