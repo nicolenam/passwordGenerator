@@ -2,10 +2,11 @@ import { useState } from "react";
 
 const Display = ({password, setIsCopied, isCopied}) =>{
 
-
     const handleClick = () =>{
-        navigator.clipboard.writeText(password);
-        setIsCopied(true);
+        if(password){
+            navigator.clipboard.writeText(password);
+            setIsCopied(true);
+        }
     }
 
     return(

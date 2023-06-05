@@ -87,6 +87,10 @@ h1{
 	cursor: pointer;
 }
 
+.display h2{
+	margin-top: 13px;
+}
+
 .copyBtn{
 	background: transparent;
 	border: none;
