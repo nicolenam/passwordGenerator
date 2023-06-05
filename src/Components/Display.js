@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Display = ({password, setIsCopied, isCopied}) =>{
 
     const handleClick = () =>{
